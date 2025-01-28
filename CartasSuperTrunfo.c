@@ -15,7 +15,7 @@ int main() {
     char carta[10];
     char cidade[50];
     int populacao, pturisticos;
-    float area, pib, densidadeP, percapita;
+    float area, pib, densidadeP, percapita; 
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -46,7 +46,7 @@ int main() {
     printf("Quantidade de pontos turisticos: \n");
     scanf("%d", &pturisticos);
 
-
+    //Nível Aventureiro
     //Cálculos
     densidadeP = (float) populacao / area;
     percapita = pib / (float)populacao;
