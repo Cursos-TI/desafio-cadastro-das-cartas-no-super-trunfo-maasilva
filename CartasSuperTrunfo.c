@@ -15,7 +15,7 @@ int main() {
     char carta[10];
     char cidade[50];
     int populacao, pturisticos;
-    float area, pib;
+    float area, pib, densidadeP, percapita;
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -23,28 +23,33 @@ int main() {
     
 
     //Interação inicial e coleta dos dados
-    printf("Digite a sigla do estado: \n");
+    printf("\nSuperTrunfo Países\n");
+    printf("\n--- Cadastro da carta ---\n");
+    printf("Sigla do estado (ex:RJ): \n");
     scanf("%s", &estado);
 
-    printf("Digite o código da carta: \n");
+    printf("Código da carta ex:A01: \n");
     scanf("%s", &carta);
 
-    printf("Digite o nome da cidade: \n");
-    scanf("%s", &cidade); 
-    // Tem um bug aqui que eu ainda não descobri a solução. Espaço entre as palavras gera um erro
+    printf("Nome da cidade: \n");
+    scanf(" %[^\n]s", &cidade); 
 
-    printf("Digite a população: \n");
+    printf("População: \n");
     scanf("%d", &populacao);
 
-    printf("Digite a Área: \n");
+    printf("Área (km²): \n");
     scanf("%f", &area);
 
-    printf("Digite o PIB: \n");
+    printf("PIB (em bilhões): \n");
     scanf("%f", &pib);
 
-    printf("Digite a quantidade de pontos turisticos: \n");
+    printf("Quantidade de pontos turisticos: \n");
     scanf("%d", &pturisticos);
 
+
+    //Cálculos
+    densidadeP = (float) populacao / area;
+    percapita = pib / (float)populacao;
 
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
@@ -58,9 +63,11 @@ int main() {
     printf("Estado: %s\n", estado);
     printf("Código da carta:  %s\n", carta);
     printf("Nome da cidade: %s\n", cidade);
-    printf("População: %d\n", populacao);
+    printf("População: %d habitantes\n", populacao);
     printf("Área: %.2f km²\n", area);
+    printf("Densidade Populacional: %.2f pessoas/km²\n", densidadeP);
     printf("PIB: R$ %.2f \n", pib);
+    printf("PIB per Capita: %.2f reais\n", percapita);
     printf("Pontos turisticos: %d\n", pturisticos);
 
 
